@@ -41,7 +41,7 @@ def get_config(config, default_config):
 
     try:
         with open(config, 'r') as config_file:
-            return yaml.load(config_file, Loader=yaml.FullLoader)
+            return yaml.load(config_file, Loader=yaml.SafeLoader)
     except (yaml.reader.ReaderError,
             yaml.parser.ParserError,
             yaml.scanner.ScannerError) as e:
